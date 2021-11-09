@@ -31,6 +31,8 @@ public class Main{
         var usefulData = response.body();
         var dataParser = new Gson();
         UniversityDataType[] uniList = dataParser.fromJson(usefulData, UniversityDataType[].class);
-        System.out.println(usefulData);
+        for(var currentUniv: uniList){
+            System.out.println(currentUniv);
+        }
     }
 }
