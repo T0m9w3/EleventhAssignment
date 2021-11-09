@@ -1,5 +1,6 @@
 package BSU.comp.comp152;
 
+import com.google.gson.Gson;
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -28,6 +29,8 @@ public class Main{
             System.exit(-1);
         }
         var usefulData = response.body();
+        var dataParser = new Gson();
+        UniversityDataType[] uniList = dataParser.fromJson(usefulData, UniversityDataType[].class);
         System.out.println(usefulData);
     }
 }
